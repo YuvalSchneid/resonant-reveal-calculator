@@ -124,9 +124,8 @@ const ResonanceCalculator = () => {
   return (
     <div className="container max-w-3xl mx-auto px-4 py-8">
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-indigo-700 mb-2">Projecton Yuval & Yarin</h1>
+        <h1 className="text-3xl font-bold text-indigo-700 mb-2">RLC Resonance Detector</h1>
         <p className="text-muted-foreground">Calculate resonant frequencies for electronic circuits</p>
-        <p className="text-muted-foreground">Electrical Engineering Lab || May 2025 </p>
       </div>
 
       {/* Step 1: Component Selection */}
