@@ -32,7 +32,7 @@ const FormulaDisplay = ({
   }, [componentType, frequency, componentValue]);
 
   return (
-    <div className="formula-box">
+    <div className="formula-box py-2">
       <div ref={formulaRef}>
         {/* General Formula */}
         <div className="mb-4">
@@ -43,7 +43,7 @@ const FormulaDisplay = ({
         {/* Applied Formula with Values */}
         <div>
           <p className="mb-2 text-sm text-muted-foreground">Applied Formula:</p>
-          {`\\[ ${outputType} = \\frac{1}{(2\\pi \\cdot ${frequency} \\, \\text{${frequencyUnit}})^2 \\cdot ${componentValue} \\, \\text{${componentUnit}${inputType}}} \\]`}
+          {`\\[ ${outputType} = \\frac{1}{(2\\pi \\cdot ${frequency}\\,\\text{${frequencyUnit}})^2 \\cdot ${componentValue}\\,\\text{${componentUnit}}} \\]`}
         </div>
       </div>
     </div>

@@ -1,13 +1,15 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { CircleCheck, Calculator } from 'lucide-react';
+import FormulaDisplay from './FormulaDisplay';
 
 // Type definitions
 type Unit = 'm' | 'µ' | 'n' | 'p';
+type FrequencyUnit = 'Hz' | 'kHz' | 'MHz' | 'GHz';
 
 const FrequencyCalculator = () => {
   // State management
@@ -19,6 +21,7 @@ const FrequencyCalculator = () => {
   const [scientificNotation, setScientificNotation] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
   const [calculationPerformed, setCalculationPerformed] = useState<boolean>(false);
+  const formulaRef = useRef<HTMLDivElement>(null);
 
   // Helper function to convert to base units
   const convertToBaseUnit = (value: number, unit: Unit): number => {
@@ -94,6 +97,16 @@ const FrequencyCalculator = () => {
     setCalculationPerformed(false);
     setError(null);
   };
+
+  // MathJax rendering effect
+  useEffect(() => {
+    if (calculationPerformed && window.MathJax && formulaRef.current) {
+      window.MathJax.typesetClear([formulaRef.current]);
+      window.MathJax.typesetPromise([formulaRef.current]).catch((err) => {
+        console.error('MathJax error:', err);
+      });
+    }
+  }, [calculationPerformed, capacitanceValue, capacitanceUnit, inductanceValue, inductanceUnit]);
 
   return (
     <div className="container max-w-3xl mx-auto px-4 py-8">
@@ -220,11 +233,14 @@ const FrequencyCalculator = () => {
 
             <div className="mt-6 p-4 bg-white rounded-md border border-indigo-100">
               <p className="text-sm text-muted-foreground mb-2">Formula Used</p>
-              <div className="formula-box">
-                <div>
-                  {/* This will be rendered by MathJax */}
+              <div ref={formulaRef} className="formula-box py-2">
+                {/* General Formula */}
+                <div className="mb-4">
                   {`\\[ f = \\frac{1}{2\\pi \\sqrt{LC}} \\]`}
-                  {`\\[ f = \\frac{1}{2\\pi \\sqrt{${capacitanceValue} \\, \\text{${capacitanceUnit}F} \\cdot ${inductanceValue} \\, \\text{${inductanceUnit}H}}} \\]`}
+                </div>
+                {/* Applied Formula with Values */}
+                <div>
+                  {`\\[ f = \\frac{1}{2\\pi \\sqrt{${capacitanceValue}\\,\\text{${capacitanceUnit}F} \\cdot ${inductanceValue}\\,\\text{${inductanceUnit}H}}} \\]`}
                 </div>
               </div>
             </div>
