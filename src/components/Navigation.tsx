@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, Frequency } from 'lucide-react';
+import { Calculator, Clock } from 'lucide-react';
 
 const Navigation = () => {
   const location = useLocation();
@@ -32,7 +32,7 @@ const Navigation = () => {
                 : 'hover:bg-muted'
             }`}
           >
-            <Frequency className="w-4 h-4" />
+            <Clock className="w-4 h-4" />
             <span>Frequency Calculator</span>
           </Link>
         </div>
