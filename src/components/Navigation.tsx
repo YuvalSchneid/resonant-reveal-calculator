@@ -14,11 +14,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo and Text in top left */}
           <div className="flex items-center gap-2">
-            <div className="bg-indigo-600 rounded-full p-1.5">
+            <div className="bg-afeka-green rounded-full p-1.5">
               <ZapIcon className="w-5 h-5 text-white" />
             </div>
             <div className="flex flex-col items-start">
-              <h2 className="text-sm font-semibold text-indigo-700">Projecton Yuval & Yarin</h2>
+              <h2 className="text-sm font-semibold text-afeka-black">Projecton Yuval & Yarin</h2>
               <p className="text-xs text-muted-foreground">Electrical Engineering Lab || May 2025</p>
             </div>
           </div>

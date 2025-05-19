@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +51,11 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				// Adding Afeka colors
+				afeka: {
+					green: '#00cc66',
+					black: '#000000',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

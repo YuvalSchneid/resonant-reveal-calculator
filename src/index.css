@@ -14,7 +14,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 243 75% 59%;
+    /* Change primary color to afeka green */
+    --primary: 145 100% 40%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 240 5% 96%;
@@ -23,15 +24,15 @@
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 243 75% 95%;
-    --accent-foreground: 243 75% 59%;
+    --accent: 145 100% 95%;
+    --accent-foreground: 145 100% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 243 75% 59%;
+    --ring: 145 100% 40%;
 
     --radius: 0.75rem;
   }
@@ -61,7 +62,7 @@
   }
   
   .result-container {
-    @apply bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-lg p-6 shadow-sm;
+    @apply bg-gradient-to-br from-green-50 to-white border border-green-100 rounded-lg p-6 shadow-sm;
   }
 }
 
