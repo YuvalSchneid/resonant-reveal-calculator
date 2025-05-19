@@ -34,7 +34,7 @@ const Navigation = () => {
               }`}
             >
               <Calculator className="w-4 h-4" />
-              <span>Component Calculator</span>
+              <span>Resonance Calculator</span>
             </Link>
             
             <Link 
